@@ -24,7 +24,7 @@ date: 2023-04-16
 
   <br>
   下图是这个效果要使用的一张粗旧型贴图。使用一张有足够细节和有良好灰度值范围的纹理有助于我们测试新的效果：
-  ![diagram](/img/shader_book/diagram92.png)   
+  ![diagram](/game-tech-post/img/shader_book/diagram92.png)   
 
 
 ***
@@ -104,10 +104,10 @@ date: 2023-04-16
 
   <br>
   当这些都完成之后，我们将屏幕效果脚本挂到我们的主摄像机上并且将我们的着色器拖拽赋值到我们的C#脚本中，这样让脚本可以有一个着色器来进行逐像素操作。最终，为了让效果能完全发挥功能，脚本和着色器都需要一张纹理。你可以在Unity的 **检查器面板（Inspector tab）** 给屏幕效果脚本的纹理变量添加任何一张纹理。一旦你添加了一张纹理，你就能看到游戏的渲染纹理之上还有我们刚刚添加的纹理，并且已经进行了 **multiplying** 混合操作。下图演示了这个屏幕效果：   
-  ![diagram](/img/shader_book/diagram93.png)   
+  ![diagram](/game-tech-post/img/shader_book/diagram93.png)   
   <br>
   下图演示了当不透明度更高时，对图像进行 **multiplying** 操作让它叠在渲染纹理上的表现更加明显：   
-  ![diagram](/img/shader_book/diagram94.png)   
+  ![diagram](/game-tech-post/img/shader_book/diagram94.png)   
   <br>
   随着我们第一个混合模式设置好，对于添加其他混合模式效果和调整游戏的最终效果也能更容易举一反三。不过，我们先剖析一下当前发生了什么。
 
@@ -145,7 +145,7 @@ date: 2023-04-16
   }
   ```   
   - 1.保存着色器代码然后返回Unity编辑器让着色器代码编译。如果没有出现错误，你将会看到类似下图的一个结果。这个就是一个简单的 **add** 混合模式：   
-  ![diagram](/img/shader_book/diagram95.png)   
+  ![diagram](/game-tech-post/img/shader_book/diagram95.png)   
   你可以看到，它的效果跟 **multiply** 混合模式相反因为我们是将两个图片进行了 **add** 混合操作。
   - 2.最后让我们再添加一个叫做 **屏幕混合（Screen Blend）** 的混合模式。这个效果在数学上来说稍微深一点，但实现起来依然简单。在着色器的 **frag()** 函数中输入下面的代码：   
   ```c#
@@ -166,4 +166,4 @@ date: 2023-04-16
 
   <br>
   下图的屏幕效果演示了使用 **屏幕混合（Screen Blend）** 模式将两张图片混合到一起的结果：   
-  ![diagram](/img/shader_book/diagram96.png)   
+  ![diagram](/game-tech-post/img/shader_book/diagram96.png)   
