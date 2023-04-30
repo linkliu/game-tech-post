@@ -1,6 +1,6 @@
 baseURL: "https://linkliu.github.io/game-tech-post"
 title: Game-Tech-Post
-paginate: 5
+paginate: 10
 theme: PaperMod
 
 enableRobotsTXT: true
