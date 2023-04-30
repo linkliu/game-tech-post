@@ -1,4 +1,5 @@
-baseURL: "https://linkliu.github.io/game-tech-post"
+baseURL: "https://linkliu.github.io/game-tech-post/"
+#baseURL: "http://localhost:1313/"
 title: Game-Tech-Post
 paginate: 10
 theme: PaperMod
