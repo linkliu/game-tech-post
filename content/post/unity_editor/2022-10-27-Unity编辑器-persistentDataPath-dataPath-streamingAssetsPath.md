@@ -28,7 +28,7 @@ date: 2022-10-27
     |                 Mac                 | 指向用户的Library目录，通常该目录是隐藏的，现在Unity是指向~/Library/Application Support/company name/product name |
 
 ***  
-<br>
+<br>   
 
 - **Application.dataPath**   
     官方参考：[https://docs.unity3d.com/2020.3/Documentation/ScriptReference/Application-streamingAssetsPath.html](https://docs.unity3d.com/2020.3/Documentation/ScriptReference/Application-streamingAssetsPath.html)   
@@ -49,7 +49,7 @@ date: 2022-10-27
     **注意**：PC上返回的路径是用反斜杠（“\”）做分割的
 
 ***
-<br>
+<br>   
 
 
 - **streamingAssetsPath**   
@@ -67,7 +67,7 @@ date: 2022-10-27
     |Android|Application.dataPath + "!/assets"|
 
 ***   
-<br>
+<br>   
 
 - **如果用UnityWebRequest来获取文件，传入的路径参数**   
     官方参考：[https://docs.unity3d.com/Manual/StreamingAssets.html](https://docs.unity3d.com/Manual/StreamingAssets.html)   
