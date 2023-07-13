@@ -147,48 +147,49 @@ date: 2022-10-31
         LockFreeQueue<GCAction> refQueue = new LockFreeQueue<GCAction>();
     #endif
     ```
+
     - `equeueGCAction`方法   
     ``` c#
     internal void equeueGCAction(GCAction action)
     {
-#if!UNITY_WEBGL 
-        lock (refQueue)
-        {
-#endif
-            refQueue.Enqueue(action);
-#if!UNITY_WEBGL 
-        }
-#endif
+        #if!UNITY_WEBGL 
+                lock (refQueue)
+                {
+        #endif
+                    refQueue.Enqueue(action);
+        #if!UNITY_WEBGL 
+                }
+        #endif
     }
     ```
+
     - `Tick`方法   
     ``` c#
     public void Tick()
     {
-#if THREAD_SAFE || HOTFIX_ENABLE
-        lock (luaEnvLock)
-        {
-#endif
-            var _L = L;
-#if !UNITY_WEBGL
-            lock (refQueue)
-            {
-#endif
-                while (refQueue.Count > 0)
+        #if THREAD_SAFE || HOTFIX_ENABLE
+                lock (luaEnvLock)
                 {
-                    GCAction gca = refQueue.Dequeue();
-                    translator.ReleaseLuaBase(_L, gca.Reference, gca.IsDelegate);
+        #endif
+                    var _L = L;
+        #if !UNITY_WEBGL
+                    lock (refQueue)
+                    {
+        #endif
+                        while (refQueue.Count > 0)
+                        {
+                            GCAction gca = refQueue.Dequeue();
+                            translator.ReleaseLuaBase(_L, gca.Reference, gca.IsDelegate);
+                        }
+        #if !UNITY_WEBGL
+                    }
+        #endif
+        #if !XLUA_GENERAL
+                    last_check_point = translator.objects.Check(last_check_point, max_check_per_tick, object_valid_checker, translator.reverseMap);
+        #endif
+        #if THREAD_SAFE || HOTFIX_ENABLE
                 }
-#if !UNITY_WEBGL
-            }
-#endif
-#if !XLUA_GENERAL
-            last_check_point = translator.objects.Check(last_check_point, max_check_per_tick, object_valid_checker, translator.reverseMap);
-#endif
-#if THREAD_SAFE || HOTFIX_ENABLE
-        }
-#endif
+        #endif
     }
     ```   
-
-做完上面的步骤，然后重新编译，重新打webgl包再运行，就不会报错了。因为浏览器运行都是单线程，所以我们这里把加锁操作再webgl平台时去掉，问题就解决了。
+    做完上面的步骤，然后重新编译，重新打webgl包再运行，就不会报错了。因为浏览器运行都是单线程，所以我们这里把加锁操作再webgl平台时去掉，问题就解决了。
