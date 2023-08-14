@@ -16,16 +16,16 @@ date: 2022-10-27
     1. `对app是只读的，对玩家来说读写都可以，如果是IOS或者安卓，该路径指向设备的公共目录`
     2. `app更新的时候，不会删除该目录，但是用户自己是可以对该目录增删改查的`
 
-    |                平台                 | 指向的位置                                                                                                        |
-    |---------------------------------: |: ---------------------------------------------------------------------------------------------------------------- |
-    |         Windows Store Apps          | %userprofile%\AppData\Local\Packages\&lt;productname&gt;\LocalState                                        |
-    | Windows Editor and Standalone Player| %userprofile%\AppData\LocalLow\&lt;companyname&gt;\&lt;productname&gt;                                                        |
-    |                WebGL                | /idbfs/&lt;md5 hash of data path&gt; 该路径是URL最后一个斜杠“/”和“？”之间的字符串                                       |
-    |                Linux                | $XDG_CONFIG_HOME/unity3d 或者$HOME/.config/unity3d                                                                |
-    |                 iOS                 | /var/mobile/Containers/Data/Application/&lt;guid&gt;/Documents                                                          |
-    |                tvOS                 | 不支持且返回空字符串                                                                                              |
-    |               Android               | 通常指向/storage/emulated/0/Android/data/&lt;packagename&gt;/files，有的老机型可能指向SD卡的路径                        |
-    |                 Mac                 | 指向用户的Library目录，通常该目录是隐藏的，现在Unity是指向~/Library/Application Support/company name/product name |
+    |平台|指向的位置|
+    |---:|:---|
+    |Windows Store Apps | %userprofile%\AppData\Local\Packages\&lt;productname&gt;\LocalState|
+    | Windows Editor and Standalone Player | %userprofile%\AppData\LocalLow\&lt;companyname&gt;\&lt;productname&gt;|
+    |WebGL | /idbfs/&lt;md5 hash of data path&gt; 该路径是URL最后一个斜杠“/”和“？”之间的字符串|
+    |Linux | $XDG_CONFIG_HOME/unity3d 或者$HOME/.config/unity3d|
+    |iOS | /var/mobile/Containers/Data/Application/&lt;guid&gt;/Documents|
+    |tvOS | 不支持且返回空字符串 |
+    |Android | 通常指向/storage/emulated/0/Android/data/&lt;packagename&gt;/files，有的老机型可能指向SD卡的路径|
+    |Mac | 指向用户的Library目录，通常该目录是隐藏的，现在Unity是指向~/Library/Application Support/company name/product name|
 
 ***  
 <br>   
