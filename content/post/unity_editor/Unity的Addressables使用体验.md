@@ -44,7 +44,10 @@ author: "LINK"
         yield return null;
     }
   ```   
-  这个方法去加载一个资源，然后通过回调告诉目前的下载进度。`opHandle.GetDownloadStatus().Percent` 和 `opHandle.GetDownloadStatus().Percent` 都不准确。前者是通过大小计算百分比，后者是通过数量计算百分比。下面是文档的原话：   
+  上面的这个方法去加载一个资源，然后通过回调告诉目前的下载进度。`opHandle.GetDownloadStatus().Percent` 和 `opHandle.GetDownloadStatus().Percent` 都不准确。前者是通过大小计算百分比，后者是通过数量计算百分比。   
+  
+  ***
+  下面是文档的原话：   
   **AsyncOperationHandle.PercentComplete:** Reports the percentage of sub-operations that have finished. For example, if an operation uses six sub-operations to perform its task, the PercentComplete indicates the entire operation is 50% complete when three of those operations have finished (it doesn't matter how much data each operation loads).   
   **AsyncOperationHandle.GetDownloadStatus:** Returns a DownloadStatus struct that reports the percentage in terms of total download size. For example, if an operation has six sub-operations, but the first operation represented 50% of the total download size, then GetDownloadStatus indicates the operation is 50% complete when the first operation finishes.   
   
@@ -60,3 +63,8 @@ author: "LINK"
   <div align="center"><img src="https://linkliu.github.io/game-tech-post/assets/img/unity3d/addressables_2.png"/></div> 
 
   `Percent` 表示加载的大小百分比，`pp` 表示文件数量的百分比。很显然是不对的，前者一直是0，然后加载完之后就立马变成了1，后者是数量百分比，反而是从0开始一直一点一点的增加，最后变成1。感觉像是这两个数字恰好反过来了一样。不知道是不是真的反过来了还是计算本身就是错的，没有源码也根本就不知道。不能让开发者去猜测的。这个问题，我也在网上查阅了很久，遇到这个问题的开发者有很多，而且在不同的release版本都有。这种问题应该是比较低级的，不应该出现在release版本中。
+
+
+***
+
+也不知道还有没有其他未发现的问题，但是在项目中使用不成熟和不稳定的东西是非常的危险的，所以就目前的体验来开，Addressables不适合用在项目中，自己拿来玩一玩是可以的。
