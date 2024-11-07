@@ -54,13 +54,13 @@ author: "LINK"
 
 
   我们在编辑器内运行模式选择从AB包运行：   
-  <div align="center"><img src="https://linkliu.github.io/game-tech-post/assets/img/unity3d/addressables_1.png"/></div> 
+  ![diagram](/game-tech-post/img/unity3d/addressables_1.png)
 
 
 
 
   我们看日志输出:
-  <div align="center"><img src="https://linkliu.github.io/game-tech-post/assets/img/unity3d/addressables_2.png"/></div> 
+  ![diagram](/game-tech-post/img/unity3d/addressables_2.png)
 
   `Percent` 表示加载的大小百分比，`pp` 表示文件数量的百分比。很显然是不对的，前者一直是0，然后加载完之后就立马变成了1，后者是数量百分比，反而是从0开始一直一点一点的增加，最后变成1。感觉像是这两个数字恰好反过来了一样。不知道是不是真的反过来了还是计算本身就是错的，没有源码也根本就不知道。不应该让开发者去猜测这些到底表示什么，应该准确的表示。这个问题，我也在网上查阅了很久，遇到这个问题的开发者有很多，而且在不同的release版本都有。这种问题应该是比较低级的，不应该出现在release版本中。
 
