@@ -67,7 +67,7 @@ date: 2021-02-25
   #pragma surface surf CustomBlinnPhong
   ```
   下图演示了我们自己的**BlinnPhong**光照模型的效果：
-  <div align="center"><img src="https://linkliu.github.io/game-tech-post/assets/img/shader_book/diagram41.png"/></div>
+  <div align="center"><img src="https://linkliu.github.io/game-tech-post/img/shader_book/diagram41.png"/></div>
 
   ***
 
@@ -79,7 +79,7 @@ date: 2021-02-25
     **BlinnPhong**高光跟**Phong**高光很像，但是前者的效率比后者要高，因为后者用更优化的代码实现了几乎一样的效果。在介绍基于物理原理的渲染之前，这种方法是Unity4中高光反射的默认选择。
     计算反射向量**R**的代价通常很高。**BlinnPhong**高光并没有计算它，而是用介于视角**V**和光线**L**之间的中间向量**H**：
 
-    <div align="center"><img src="https://linkliu.github.io/game-tech-post/assets/img/shader_book/diagram42.png"/></div>
+    <div align="center"><img src="https://linkliu.github.io/game-tech-post/img/shader_book/diagram42.png"/></div>
     跟完整的计算出我们的反射向量不同，我们转而去获得介于视角方向和光线方向之间的中间向量，基本模拟了反射向量。跟**Phong**高光比起来，这种方法更加贴近真实的物理现象，但是我们依然认为，向你介绍所有的这些方法依然是很有必要的：
     
     $$ S_{Phong} = (R \cdot V)^p, S_{BlinnPhong} = (N \cdot H)^p $$

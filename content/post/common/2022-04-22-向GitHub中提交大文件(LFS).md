@@ -26,28 +26,28 @@ date: 2022-04-22
     - 1.首先在GitHub创建一个自己的仓库，并且把它拉取到本地  
     - 2.把自己的大文件用 **7z** 或者 **WinRar** 之类的软件进行分包，每个大小小于或者等于1G  
     - 3.把这些文件复制到本地仓库中，如下图所示：  
-        <div align="center"><img src="https://linkliu.github.io/game-tech-post/assets/img/common/1.png"/></div>
+        <div align="center"><img src="https://linkliu.github.io/game-tech-post/img/common/1.png"/></div>
 - 2.在SourceTree中LFS初始化  
     在SourceTree中选择 **仓库-> Git LFS -> 初始化仓库**
-    <div align="center"><img src="https://linkliu.github.io/game-tech-post/assets/img/common/2.png"/></div> 
+    <div align="center"><img src="https://linkliu.github.io/game-tech-post/img/common/2.png"/></div> 
     <br />  
 
     接着会弹出窗口，选择 **开始使用Git LFS**   
-    <div align="center"><img src="https://linkliu.github.io/game-tech-post/assets/img/common/3.png"/></div>  
+    <div align="center"><img src="https://linkliu.github.io/game-tech-post/img/common/3.png"/></div>  
     <br />  
 
     然后在弹出的窗口中选择添加，在下拉列表中选择合适的扩展名，比如**.7z** ，然后点确定。  
-    <div align="center"><img src="https://linkliu.github.io/game-tech-post/assets/img/common/4.png"/></div>  
+    <div align="center"><img src="https://linkliu.github.io/game-tech-post/img/common/4.png"/></div>  
     <br />
 
     如果是分包，可能扩展名下拉列表中不会有对应的选项，这个时候你可以手动写上去，比如我的**.001** 这样的分包后的扩展名，
     然后再点确定。最后点击窗口的确定按钮，那么这些扩展名就会加入LFS提交
     策略中了。之后会在项目中生成一个 **.gitattributes** 后缀的文件，这个要跟LFS文件一起提交。
-    <div align="center"><img src="https://linkliu.github.io/game-tech-post/assets/img/common/5.png"/></div>  
+    <div align="center"><img src="https://linkliu.github.io/game-tech-post/img/common/5.png"/></div>  
     <br />  
 
 - 3.在SourceTree中选中那些文件【只支持一个一个的选】，右键，然后选择**跟踪Git LFS的文件类型**  
-    <div align="center"><img src="https://linkliu.github.io/game-tech-post/assets/img/common/6.png"/></div>  
+    <div align="center"><img src="https://linkliu.github.io/game-tech-post/img/common/6.png"/></div>  
     <br />  
     把所有要执行跟踪的LFS文件都执行一遍上面的操作，然后选择这些LFS文件外加一个**.gitattributes** 文件一起暂存，随后提交。
     之所以要这样做，是如果不执行上面的跟踪步骤，在暂存提交的时候会收到警告。
