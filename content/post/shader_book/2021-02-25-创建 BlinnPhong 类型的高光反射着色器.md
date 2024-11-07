@@ -7,7 +7,7 @@ date: 2021-02-25
 ---
 ## 创建 BlinnPhong 类型的高光反射着色器
 
-**Blinn**是另一种计算和模拟高光的更有效的方法。它只要视角方向和光线方向向量的中间向量就可以计算出来。这个高光是**Jim Blinn**带入到Cg世界中的。 他发现比起计算反射向量来，只要中间向量的效率更好。它减少了代码量和处理时间。 如果你在**UnityCG.cginc**文件中查看了Unity内建的**BlinnPhong**光照模型的话，它也是用了中间向量，因此它被命名为**BlinnPhong** 。它只是完整**Phong**光照计算中的一种简单的版本。
+**Blinn** 是另一种计算和模拟高光的更有效的方法。它只要视角方向和光线方向向量的中间向量就可以计算出来。这个高光是 **Jim Blinn** 带入到Cg世界中的。 他发现比起计算反射向量来，只要中间向量的效率更好。它减少了代码量和处理时间。 如果你在 **UnityCG.cginc** 文件中查看了Unity内建的 **BlinnPhong** 光照模型的话，它也是用了中间向量，因此它被命名为 **BlinnPhong** 。它只是完整 **Phong** 光照计算中的一种简单的版本。
 
 ***
 
@@ -18,7 +18,7 @@ date: 2021-02-25
 
   让我们按照下面的步骤开始学习这个知识点：
 
-  1. 这次我们不创建新的场景，就用原来场景和场景内的对象就好，然后我们需要创建一个新的着色器和材质，并且把名字都叫**BlinnPhong**。
+  1. 这次我们不创建新的场景，就用原来场景和场景内的对象就好，然后我们需要创建一个新的着色器和材质，并且把名字都叫 **BlinnPhong** 。
   2. 当我们创建好着色器后，双击它，开始编辑。
 
 
@@ -29,8 +29,8 @@ date: 2021-02-25
 
 - **操作步骤**
 
-  按照下面的步骤走，我们来创建**BlinnPhong**光照模型：
-  1. 首先，我们需要在着色器的**属性(Properties)**块中添加我们需要用到的属性，这样好让我们控制高光效果：
+  按照下面的步骤走，我们来创建 **BlinnPhong** 光照模型：
+  1. 首先，我们需要在着色器的 **属性(Properties)** 块中添加我们需要用到的属性，这样好让我们控制高光效果：
   ```c#
   Properties
   {
@@ -40,7 +40,7 @@ date: 2021-02-25
     _SpecPower ("Specular Power", Range(0.1,60)) = 3
   }
   ```
-  2. 接下来在**CGPROGRAM**块中添加与属性对应的变量，这样我们就可以获得来自**属性(Properties)**中的数据：
+  2. 接下来在 **CGPROGRAM** 块中添加与属性对应的变量，这样我们就可以获得来自 **属性(Properties)** 中的数据：
   ```c#
   sampler2D _MainTex;
   float4 _MainTint;
@@ -61,13 +61,13 @@ date: 2021-02-25
       return c;
   }
   ```
-  4. 为了完成我们的着色器，我们还需要告知着色器的**CGPROGRAM**块使用我们自定义的光照模型而不是Unity内建的，修改**#pragma**指示，改成如下代码所示：
+  4. 为了完成我们的着色器，我们还需要告知着色器的 **CGPROGRAM** 块使用我们自定义的光照模型而不是Unity内建的，修改**#pragma**指示，改成如下代码所示：
   ```c#
   CPROGRAM
   #pragma surface surf CustomBlinnPhong
   ```
-  下图演示了我们自己的**BlinnPhong**光照模型的效果：
-  <div align="center"><img src="https://linkliu.github.io/game-tech-post/img/shader_book/diagram41.png"/></div>
+  下图演示了我们自己的 **BlinnPhong** 光照模型的效果：
+  ![diagram](/game-tech-post/img/shader_book/diagram41.png)
 
   ***
 
@@ -76,19 +76,18 @@ date: 2021-02-25
 
   - **原理介绍**
 
-    **BlinnPhong**高光跟**Phong**高光很像，但是前者的效率比后者要高，因为后者用更优化的代码实现了几乎一样的效果。在介绍基于物理原理的渲染之前，这种方法是Unity4中高光反射的默认选择。
-    计算反射向量**R**的代价通常很高。**BlinnPhong**高光并没有计算它，而是用介于视角**V**和光线**L**之间的中间向量**H**：
+    **BlinnPhong** 高光跟 **Phong** 高光很像，但是前者的效率比后者要高，因为后者用更优化的代码实现了几乎一样的效果。在介绍基于物理原理的渲染之前，这种方法是Unity4中高光反射的默认选择。
+    计算反射向量 **R** 的代价通常很高。**BlinnPhong** 高光并没有计算它，而是用介于视角 **V** 和光线 **L** 之间的中间向量 **H** ：
 
-    <div align="center"><img src="https://linkliu.github.io/game-tech-post/img/shader_book/diagram42.png"/></div>
-    跟完整的计算出我们的反射向量不同，我们转而去获得介于视角方向和光线方向之间的中间向量，基本模拟了反射向量。跟**Phong**高光比起来，这种方法更加贴近真实的物理现象，但是我们依然认为，向你介绍所有的这些方法依然是很有必要的：
-    
-    $$ S_{Phong} = (R \cdot V)^p, S_{BlinnPhong} = (N \cdot H)^p $$
+    ![diagram](/game-tech-post/img/shader_book/diagram42.png)
+    跟完整的计算出我们的反射向量不同，我们转而去获得介于视角方向和光线方向之间的中间向量，基本模拟了反射向量。跟 **Phong** 高光比起来，这种方法更加贴近真实的物理现象，但是我们依然认为，向你介绍所有的这些方法依然是很有必要的：
+    ![diagram](/game-tech-post/img/shader_book/diagram117.png)
     
     根据向量的代数计算，中间向量可以用下面的方法算出：
     
-    $$H\frac{V+L}{|V+L|} $$
+    ![diagram](/game-tech-post/img/shader_book/diagram118.png)
     
-    这里 的$\|V+L\|$表示向量$V+L$的长度。在Cg中，我们简单的将视角方向和光线方向相加并且对结果进行标准化成一个单位向量：
+    这里 的 **\|V+L\|** 表示向量 **V+L** 的长度。在Cg中，我们简单的将视角方向和光线方向相加并且对结果进行标准化成一个单位向量：
     ```c#
     float3 halfVector = normalize(lightDir + viewDir);  
     ```
@@ -105,13 +104,8 @@ date: 2021-02-25
 
   我们用下面的表格来回顾我们之前学些过的不同光照模型知识：
 
-  | Technique  | Type     | Unity 5 shader             | Light Intensity (I)                                          |
-  | ---------- | -------- | -------------------------- | ------------------------------------------------------------ |
-  | Lambertian | Diffuse  | Legacy Shaders \| Diffuse  | $I = N \cdot L$                                              |
-  | Phong      | Specular |                            | $I = N \cdot L + (R \cdot V)^p$ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  $R = 2N\cdot(N \cdot L) - L$ |
-  | BlinnPhong | Specular | Legacy Shaders \| Specular | $I = N \cdot L +(N \cdot H)^p $ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$H = \frac{V+L}{\|V+L\|}$ |
-
-  下面的链接有一些关于粗糙表面的更有趣的光照模型，比如**Oren-Nayar**：
-  
+  ![diagram](/game-tech-post/img/shader_book/diagram119.png)
+    
+  下面的链接有一些关于粗糙表面的更有趣的光照模型，比如 **Oren-Nayar** ：   
   [https://en.wikipedia.org/wiki/Oren%E2%80%93Nayar_reflectance_model](https://en.wikipedia.org/wiki/Oren%E2%80%93Nayar_reflectance_model)
 

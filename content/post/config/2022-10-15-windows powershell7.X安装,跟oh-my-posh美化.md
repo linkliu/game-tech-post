@@ -43,7 +43,7 @@ date: 2022-10-15
 
         - 然后关闭windows terminal,重新打开，就可以看到默认是以powershell启动  
    
-<br>     
+***     
 
 - **3.安装oh-my-posh[顺带安装posh-git]**   
     安装oh-my-posh和posh-git   

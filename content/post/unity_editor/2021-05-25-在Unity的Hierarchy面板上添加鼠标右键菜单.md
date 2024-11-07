@@ -45,4 +45,4 @@ public static class EditorTool
 }
 ```
 
-![UnityEditor](https://linkliu.github.io/game-tech-post/assets/img/unity3d/1.png){: .shadow width = "50%" }
+![UnityEditor](/game-tech-post/img/unity3d/1.png)

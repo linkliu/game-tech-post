@@ -57,5 +57,5 @@ for file in ${ovpn_dir}/*.ovpn; do
 done
 ```   
 
-<br>   
+***   
 这个教程使用的openvpn这个客户端，如果没有这个命令，请先安装openvpn，openvpn的安装方法，请去网上查找。

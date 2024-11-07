@@ -48,7 +48,7 @@ foreach ($ovpn_file in Get-ChildItem -Path $ovpn_dir -Filter *.ovpn) {
 }
 ```   
 
-<br>   
+***   
 1. `$ovpn_dir`是你自己的配置文件目录，把所有的 .ovpn 文件放到该目录下面。
 2. `$auth_file`是你的账户信息，里面有两行，第一行是你的用户名，第二行是你的密码。格式大概如下面一样，记得把`your_name`，`your_password`整个替换成你的用户名和密码。   
 ```bash
