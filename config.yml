@@ -16,12 +16,6 @@ minify:
   disableXML: true
   minifyOutput: true
 
-outputs:
-  home:
-    - HTML
-    - RSS
-    - JSON # necessary for search
-
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: Game-Tech-Post
@@ -141,7 +135,3 @@ markup:
     # guessSyntax: true
     # lineNos: true
     # style: monokai
-
-services:
-  disqus:
-    shortname: liulink
