@@ -44,21 +44,20 @@ params:
   showtoc: false
   tocopen: false
 
-  comment:
-    giscus:
-      enable: true   
-      repo: "linkliu/game-tech-post" #<your_repo> 对应官网的 data-repo
-      repoId: "R_kgDOJdJ0Ag" #<your_repoId> 对应官网的 data-repo-id
-      category: "Announcements" #<your_category> 对应官网的 data-category
-      categoryId: "DIC_kwDOJdJ0As4CkFsD" # <your_categoryId> 对应官网的 data-category-id
-      lang: "zh-CN"   
-      mapping: "pathname" # <your_mapping> 对应官网的 data-mapping   
-      reactionsEnabled: "1"   
-      emitMetadata: "0"   
-      inputPosition: "bottom"   
-      lazyLoading: false   
-      lightTheme: "light"   
-      darkTheme: "dark_dimmed"
+  giscus:
+    enable: true   
+    repo: "linkliu/game-tech-post" #<your_repo> 对应官网的 data-repo
+    repoId: "R_kgDOJdJ0Ag" #<your_repoId> 对应官网的 data-repo-id
+    category: "Announcements" #<your_category> 对应官网的 data-category
+    categoryId: "DIC_kwDOJdJ0As4CkFsD" # <your_categoryId> 对应官网的 data-category-id
+    lang: "zh-CN"   
+    mapping: "pathname" # <your_mapping> 对应官网的 data-mapping   
+    reactionsEnabled: "1"   
+    emitMetadata: "0"   
+    inputPosition: "bottom"   
+    lazyLoading: false   
+    lightTheme: "light"   
+    darkTheme: "dark_dimmed"
 
   assets:
     # disableHLJS: true # to disable highlight.js
@@ -126,6 +125,9 @@ params:
     threshold: 0.4
     minMatchCharLength: 0
     keys: ["title", "permalink", "summary", "content"]
+  # 评论区
+  discussionTitle: 评论区
+  discussionSubtitle: 希望它能帮到你或者帮你找到思路（^_^）选个表情，或者留个评论吧！
   
 menu:
   main:
