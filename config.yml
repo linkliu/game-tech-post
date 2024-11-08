@@ -130,15 +130,19 @@ params:
 menu:
   main:
     - identifier: archives
-      name: archives
+      name: Archives
       url: archives
       weight: 10
+    - identifier: search
+      name: Search
+      url: search/
+      weight: 11
     - identifier: categories
-      name: categories
+      name: Categories
       url: /categories/
       weight: 20
     - identifier: tags
-      name: tags
+      name: Tags
       url: /tags/
       weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
