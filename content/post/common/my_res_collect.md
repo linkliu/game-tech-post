@@ -5,6 +5,10 @@ tags: ["tools", "resources", "web"]
 date: 2025-03-17T11:40:54+08:00
 ---
 
+### AI
+
+- 1.[Pinokio[各种AI工具一键安装]](https://pinokio.computer/)
+
 ### 数学
 
 - 1.[在线数学学习](https://textbooks.math.gatech.edu/)
