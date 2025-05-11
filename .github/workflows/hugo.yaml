@@ -36,7 +36,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.145.0
+      HUGO_VERSION: 0.147.1
       HUGO_ENVIRONMENT: production
       TZ: America/Los_Angeles
     steps:
@@ -62,7 +62,11 @@ jobs:
         with:
           path: |
             ${{ runner.temp }}/hugo_cache
-          key: hugo
+          key: hugo-${{ github.run_id }}
+          restore-keys:
+            hugo-
+      - name: Configure Git
+        run: git config core.quotepath false
       - name: Build with Hugo
         run: |
           hugo \
