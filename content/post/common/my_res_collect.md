@@ -93,6 +93,7 @@ date: 2025-03-17T11:40:54+08:00
 - 13.[PDF转其他文档](https://www.ilovepdf.com/)
 - 14.[老弟工具箱[图吧垃圾佬的工具箱]](https://ldt.pc.wiki/)
 - 15.[HEX编辑器](https://hexed.it/)
+- 16.[Ease缓动参考](https://easings.net/)
 
 ### web
 
