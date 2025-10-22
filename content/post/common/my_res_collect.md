@@ -95,6 +95,7 @@ date: 2025-03-17T11:40:54+08:00
 - 15.[HEX编辑器](https://hexed.it/)
 - 16.[Ease缓动参考](https://easings.net/)
 - 17.[JetBrain全家桶激活破解](https://3.jetbra.in/)
+- 18.[JetBrain全家桶激活破解2](https://jetbrains.ankio.net/license)
 
 ### web
 
