@@ -5,6 +5,11 @@ tags: ["tools", "resources", "web"]
 date: 2025-03-17T11:40:54+08:00
 ---
 
+
+### 游戏设计
+
+- 1.[Playtank[游戏系统性设计Martin Annander]](https://playtank.io/)
+
 ### AI
 
 - 1.[Pinokio[各种AI工具一键安装]](https://pinokio.computer/)
