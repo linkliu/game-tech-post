@@ -31,6 +31,7 @@ date: 2025-03-17T11:40:54+08:00
 - 8.[ZenHAX[模型破解]](https://zenhax.com/index.php.html)
 - 9.[卫星地图](http://www.terrainmap.com/)
 - 10.[游戏纹理商店](https://polyhaven.com/textures)
+- 11.[游戏免费音效](https://www.zapsplat.com/)
 
 ### 游戏引擎
 
