@@ -27,6 +27,7 @@ jobs:
       HUGO_VERSION: 0.158.0
       NODE_VERSION: 24.14.0
       TZ: Europe/Oslo
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -107,4 +108,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@v4
