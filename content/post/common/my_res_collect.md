@@ -32,6 +32,10 @@ date: 2025-03-17T11:40:54+08:00
 - 9.[卫星地图](http://www.terrainmap.com/)
 - 10.[游戏纹理商店](https://polyhaven.com/textures)
 - 11.[游戏免费音效](https://www.zapsplat.com/)
+- 12.[3D资源](https://quaternius.com/)
+- 13.[Kenney(3D资源)](https://kenney.nl/assets)
+- 14.[3D资源（部分收费）](https://kaylousberg.itch.io/)
+- 15.[poly.pizza](https://poly.pizza/)
 
 ### 游戏引擎
 
